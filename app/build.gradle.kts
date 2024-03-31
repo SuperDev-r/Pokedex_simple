@@ -104,6 +104,7 @@ androidComponents {
 dependencies {
   // modules
   implementation(projects.coreData)
+  implementation(libs.androidx.junit.ktx)
 
   // modules for unit test
   testImplementation(projects.coreNetwork)
@@ -162,4 +163,12 @@ dependencies {
   androidTestImplementation(libs.androidx.junit)
   androidTestImplementation(libs.androidx.espresso)
   androidTestImplementation(libs.android.test.runner)
+  androidTestImplementation("androidx.test.espresso:espresso-contrib:3.3.0") {
+    exclude(group = "org.hamcrest", module = "hamcrest-core")
+  }
+//  androidTestImplementation ("org.hamcrest:hamcrest:2.2")
+
+  // allure
+  testImplementation(libs.allure.rest.assured)
+  testImplementation(libs.allure.junit5)
 }

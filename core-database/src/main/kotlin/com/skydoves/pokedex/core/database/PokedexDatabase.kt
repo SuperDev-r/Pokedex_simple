@@ -17,8 +17,10 @@
 package com.skydoves.pokedex.core.database
 
 import androidx.room.Database
+import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
+import androidx.test.platform.app.InstrumentationRegistry
 import com.skydoves.pokedex.core.database.entitiy.PokemonEntity
 import com.skydoves.pokedex.core.database.entitiy.PokemonInfoEntity
 
@@ -32,4 +34,15 @@ abstract class PokedexDatabase : RoomDatabase() {
 
   abstract fun pokemonDao(): PokemonDao
   abstract fun pokemonInfoDao(): PokemonInfoDao
+
+  companion object {
+    fun createForTesting(pokemonDao: PokemonDao, pokemonInfoDao: PokemonInfoDao): PokedexDatabase {
+      return Room.inMemoryDatabaseBuilder(
+        InstrumentationRegistry.getInstrumentation().context,
+        PokedexDatabase::class.java
+      )
+        .allowMainThreadQueries()
+        .build()
+    }
+  }
 }

@@ -52,6 +52,7 @@ android {
 
 dependencies {
   implementation(projects.coreModel)
+  implementation(libs.androidx.monitor)
   testImplementation(projects.coreTest)
 
   // coroutines
@@ -77,4 +78,10 @@ dependencies {
   testImplementation(libs.junit)
   testImplementation(libs.androidx.test.core)
   testImplementation(libs.robolectric)
+
+
+// allure
+  testImplementation(libs.allure.rest.assured)
+  testImplementation(libs.allure.junit5)
+
 }
