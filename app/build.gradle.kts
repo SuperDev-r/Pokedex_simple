@@ -163,4 +163,8 @@ dependencies {
   androidTestImplementation(libs.androidx.espresso)
   androidTestImplementation("androidx.test.espresso:espresso-contrib:3.5.1")
   androidTestImplementation(libs.android.test.runner)
+
+  // Зависимости для отчета
+  androidTestImplementation ("io.qameta.allure:allure-junit5:3.16.0")
+//  androidTestImplementation ("io.qameta.allure:allure-android:3.16.0")
 }
