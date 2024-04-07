@@ -20,7 +20,7 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 
-class Test {
+class PokemonEntityTest {
   private lateinit var viewModel: DetailViewModel
   private lateinit var detailRepository: DetailRepository
   private val pokedexService: PokedexService = mock()
