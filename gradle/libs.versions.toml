@@ -1,5 +1,5 @@
 [versions]
-agp = "8.2.2"
+agp = "8.3.1"
 allureRestAssured = "2.13.1"
 core = "1.4.0"
 coreTesting = "2.1.0"

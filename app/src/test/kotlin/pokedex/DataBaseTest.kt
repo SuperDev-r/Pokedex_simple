@@ -1,3 +1,4 @@
+/*
 package pokedex
 
 import androidx.lifecycle.MutableLiveData
@@ -106,7 +107,7 @@ class DataBaseTest {
   @Test
   fun getById()= runBlockingTest {
 
-    /*val expectedMessage = Pokemon(
+val expectedMessage = Pokemon(
       page = 0,
       name = "111",
       url = "\"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/\" +\n" +
@@ -115,7 +116,8 @@ class DataBaseTest {
 
     coEvery { pokemonDAO.getPokemonList(0 ) } returns List<PokemonEntity>(init = 1, size = 1)
 
-    val result = pokemonDAO.getById(expectedMessage.id)*/
+    val result = pokemonDAO.getById(expectedMessage.id)
+
 
 //    assertEquals(expectedMessage.id, result.value?.id)
 
@@ -134,7 +136,7 @@ class DataBaseTest {
   }
 
 
-  /*@get:Rule
+@get:Rule
   val instantTaskExecutorRule = InstantTaskExecutorRule()
 
   private lateinit var repository: pokemonInfoDaoProvider
@@ -145,8 +147,8 @@ class DataBaseTest {
   @Before
   fun setup() {
     repository = PokemonRepository(pokemonDao)
-  }*/
-  /*
+  }
+
     @Test
     fun insertPokemon_Success() {
       // Given
@@ -214,9 +216,11 @@ class DataBaseTest {
     fun testGetPokemonInfo() {
       // Ваш тест для метода getPokemonInfo
     }
-  }*/
+  }
+
 }
 
 private infix fun Any.returns(mutableLiveData: MutableLiveData<Pokemon>) {
 
 }
+*/

@@ -1,13 +1,17 @@
 package com.skydoves.pokedex
 
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import androidx.test.espresso.Espresso.*
-import androidx.test.espresso.action.ViewActions.*
-import androidx.test.espresso.assertion.ViewAssertions.*
+import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.action.ViewActions.click
+import androidx.test.espresso.action.ViewActions.doubleClick
+import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.contrib.RecyclerViewActions
-import androidx.test.espresso.contrib.RecyclerViewActions.*
+import androidx.test.espresso.contrib.RecyclerViewActions.actionOnHolderItem
 import androidx.test.espresso.matcher.BoundedMatcher
-import androidx.test.espresso.matcher.ViewMatchers.*
+import androidx.test.espresso.matcher.ViewMatchers.isCompletelyDisplayed
+import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
+import androidx.test.espresso.matcher.ViewMatchers.withId
+import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.skydoves.pokedex.ui.main.MainActivity
@@ -15,7 +19,7 @@ import com.skydoves.pokedex.ui.main.PokemonAdapter
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
 import org.hamcrest.Description
-import org.hamcrest.Matchers.*
+import org.hamcrest.Matchers.allOf
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -140,7 +144,7 @@ class PokedexAppTest {
     onView(
       withId(R.id.recyclerView)
     ).perform(
-      actionOnHolderItem(matcher, doubleClick()),
+      RecyclerViewActions.actionOnHolderItem(matcher, doubleClick()),
     )
     Thread.sleep(5000)
     onView(withId(R.id.header)).check(
